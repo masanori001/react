@@ -12,7 +12,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home_Page />} />
           <Route path="/time_stamp" element={<Timestamp_Page />} />
-          {/* <Route path="*" element={} */}
+          <Route path="/*" element={<html><h2>404 Not Found</h2></html>} />
         </Routes>
       </div>
     </Router>

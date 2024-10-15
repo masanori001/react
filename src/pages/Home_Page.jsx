@@ -9,7 +9,7 @@ export const Home_Page = () => {
         <nav>
             <ul>
                 <li><Link to="/">トップページ</Link></li>
-                <li><Link to="/time_stamp">タイマーページ</Link></li>       
+                <li><Link to="/time_stamp">タイマーページ</Link></li>     
             </ul>
         </nav>
         {/* <Page_Header /> */}
