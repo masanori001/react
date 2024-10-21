@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
 
+import { Page_Header } from "../commom_compornent/PageHeader";
+
 export const PunchTimeClock = () => {
     
     // // 現在時刻を管理するuseStateを定義
@@ -19,16 +21,9 @@ export const PunchTimeClock = () => {
     // ダイアログ制御
     const openDialog = (title, message) => {
 
-        // // 時刻を取得
-        // const date = new Date;
-        // const H = date.getHours(),
-        //         M = date.getMinutes(),
-        //         S = date.getSeconds();
-        // const currentTime = `${H}:${M}:${S}`
-
         dialogRef.current.querySelector("h2").innerHTML = title;
         // ダイアログメッセージと現在時刻をpタグに埋め込み
-        dialogRef.current.querySelector("p").innerHTML = `${message}<br>${currentTime}`;
+        dialogRef.current.querySelector("p").innerHTML = message;
         dialogRef.current.showModal();
     };
     const closeDialog = () => dialogRef.current.close();
@@ -36,6 +31,11 @@ export const PunchTimeClock = () => {
 
     return (
         <div>
+
+            {/* ヘッダー部 */}
+            <Page_Header />
+
+            {/* タイムレコーダー部 */}
             <h2>タイムレコーダー</h2>
             <button id="startWorkBtn" onClick={() => {
                 openDialog("勤務開始", "打刻完了");
