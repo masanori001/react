@@ -1,4 +1,4 @@
-import { Page_Header } from "../commom_compornent/PageHeader";
+import { Page_Header } from "./commom_compornent/PageHeader";
 import { Link } from "react-router-dom"
 
 export const Home = () => {
