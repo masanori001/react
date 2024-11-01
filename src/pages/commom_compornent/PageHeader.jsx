@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CurrentTime } from "./CurrentTime";
+import headercss from "../css/headerstyle.module.css"
 
 export const Page_Header = () => {
 
   return (
-    <>
-      <header className="App-header">
+    <div  className={headercss.header}>
+      <header>
         <h1>勤怠管理システム</h1>
         <p>ようこそ、さん</p>
         <CurrentTime />
@@ -17,6 +18,6 @@ export const Page_Header = () => {
           </ul>
         </nav>
       </header>
-    </>
+    </div>
   );
 };

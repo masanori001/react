@@ -1,0 +1,60 @@
+header {
+    border: 1px solid silver;
+    width: auto; /* 横幅はウィンドウのサイズに自動調整 */
+    display: flex; /* フレックスコンテナ(子要素を横並び) */
+    flex-wrap: wrap; /* 要素を折り返す(navを折り返している) */
+    align-items: center; /* 縦方向の中央揃え */
+    background-color: skyblue; /* 背景色 */
+}
+header h1 {
+    padding-left: 1%;
+    margin: 0pt ; /* 上下方向の余白削除 */
+    margin-right: auto; /* 右方向の余白を自動調整 */
+}
+header p {
+    margin: 0pt 10pt; /* 上下方向の余白削除＆左右10pt確保 */
+}
+
+
+header nav {
+    background-color: aliceblue;
+    width: 100%; /* navを全幅にする（折り返される） */
+    padding-top: 2pt;
+}
+header nav ul {
+    display: flex; /* ul内要素をフレックスコンテナ（リストを横並び) */
+    padding: 0pt 5pt;
+    margin: 0;
+    list-style: none; /* リストスタイルを削除 */
+}
+header nav li {
+    padding-left: 1%;
+    padding-right: 1%;
+    width: auto;
+}
+header nav li:not(:last-child){
+    border-right:2px solid silver;
+}
+header nav li a {
+    text-decoration: none; /* リンクの下にある線を消す */
+}
+nav a:hover{
+    color: violet;
+}
+
+/* =====疑似要素===== */
+
+/* 疑似要素でリンクがホバーされると線を横から表示させる */
+header nav li a:after {
+    position: relative;
+    display: block;
+    content: "";
+    width: 0%;
+    height: 0.5px;
+    bottom: 3pt;
+    background: violet;
+    transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+header nav li a:hover:after {
+    width: 100%;
+}
