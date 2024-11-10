@@ -4,7 +4,7 @@ import { PunchTimeSet } from './commom_compornent/CurrentTime';
 
 export const PunchTimeClock = () => {
 
-    // 時間を受け取るためのuseState
+    //時間を受け取るためのuseState
     const [punchTime, fetchPunchTime ] = useState("undefined");
     const parentSetFunc = (PunchTime) =>{
         fetchPunchTime (PunchTime);
@@ -17,8 +17,9 @@ export const PunchTimeClock = () => {
         dialogRef.current.querySelector("h2").innerHTML = title;
         dialogRef.current.querySelector("p").innerHTML = message;
 
+        // state更新関数を子関数に渡して更新させる
         PunchTimeSet(parentSetFunc);
-        console.log(punchTime);
+        // console.log(punchTime);
 
         dialogRef.current.showModal();
     };
@@ -44,7 +45,7 @@ export const PunchTimeClock = () => {
                 <dialog ref={dialogRef}>
                     <h2>insert_dialogTitle!</h2>
                     <p>insert_dialogMassage!</p>
-                    <p>打刻時間：{ punchTime }</p>
+                    <p>打刻時間：{punchTime}</p>
                     <button onClick={closeDialog}>閉じる</button>
                 </dialog>
             </div>

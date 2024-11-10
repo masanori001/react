@@ -9,7 +9,7 @@ export const Page_Header = () => {
     <div  className={headercss.header}>
       <header>
         <h1>勤怠管理システム</h1>
-        <p>ようこそ、さん</p>
+        <p>ようこそ、Guestさん</p>
         <CurrentTime />
         <nav>
           <ul>
