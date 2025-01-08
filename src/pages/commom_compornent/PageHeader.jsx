@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CurrentTime } from "./CurrentTime";
 import headercss from "../css/headerstyle.module.css"
 
-export const Page_Header = () => {
+export const PageHeader = () => {
 
   return (
     <div  className={headercss.header}>
