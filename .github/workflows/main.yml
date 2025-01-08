@@ -49,7 +49,7 @@ jobs:
     
           - name: Commit and push changes to another repository
             run: |
-              git config user.name "masanori001"
+              git config user.name "masanori001" #認証
               git add .
               git commit -m "Add build artifacts"
               git push origin main  # 別リポジトリの`main`ブランチにpush
