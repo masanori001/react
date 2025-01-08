@@ -1,5 +1,5 @@
-import React, { useState, useRef, useContext } from 'react';
-import { Page_Header } from "./commom_compornent/PageHeader";
+import React, { useState, useRef } from 'react';
+import { PageHeader } from "./commom_compornent/PageHeader";
 import { PunchTimeSet } from './commom_compornent/CurrentTime';
 
 export const PunchTimeClock = () => {
@@ -28,7 +28,7 @@ export const PunchTimeClock = () => {
     return (
             <div>
                 {/* ヘッダー部 */}
-                <Page_Header />
+                <PageHeader />
                 {/* タイムレコーダー部 */}
                 <h2>タイムレコーダー</h2>
 

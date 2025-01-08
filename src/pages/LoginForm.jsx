@@ -6,8 +6,13 @@
 // [4]メールアドレスでのパスワードチェンジ
 // [5]新規アカウント作成画面への遷移
 // [6]パスワードを●●●で隠す奴
+
 import React, { useState, useRef } from 'react';
 
+//　検証用のbackend_url
+const backend_url = 'http://localhost:3001/'
+//　本番用のbackend_url
+// const backend_url = 'http//xxx.xxx.xxx.xxx:xxxx/'
 
 export const LoginPage =()=> {
     
@@ -54,8 +59,8 @@ export const LoginPage =()=> {
         event.preventDefault(); //ページリロード防止
 
         //バリデーションチェックの可否判定
-        if (usernameText=='入力されたユーザー名はポリシーを満たしています。' 
-            && passwordText=='入力されたパスワードはポリシーを満たしています。')
+        if (usernameText==='入力されたユーザー名はポリシーを満たしています。' 
+            && passwordText==='入力されたパスワードはポリシーを満たしています。')
             {   
                 console.log('フォームの検証成功');
                 // 入力フォームの状態を受け取り
@@ -73,7 +78,7 @@ export const LoginPage =()=> {
                 console.log(userAuthJson);
 
                 // user認証のAPI
-                const url = await 'http://localhost:3001/userauth';
+                const url = await backend_url + 'userauth';
                 // ★例外処理は後で書く
                 const response = await fetch(url,{
                     method: 'POST',

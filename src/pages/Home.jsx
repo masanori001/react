@@ -1,11 +1,11 @@
-import { Page_Header } from "./commom_compornent/PageHeader";
+import { PageHeader } from "./commom_compornent/PageHeader";
 import { Link } from "react-router-dom"
 
 export const Home = () => {
     return (
     <>  
         {/* ヘッダー部 */}
-        <Page_Header />
+        <PageHeader />
 
         {/* ホームページ部 */}
         <h2>トップページ</h2>

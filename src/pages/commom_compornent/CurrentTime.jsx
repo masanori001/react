@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react';
 
 // 現在時刻を取得して返す関数
 const fetchCurrentTime = () => {
-        const date = new Date;
+        const date = new Date();
         const H = date.getHours(),
                 M = date.getMinutes(),
                 S = date.getSeconds();
