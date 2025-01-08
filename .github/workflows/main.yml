@@ -42,7 +42,7 @@ jobs:
               token: ${{ secrets.TOKEN_KEY }}  # GITHUB_TOKENを使って認証
     
           - name: Download build artifact
-            uses: actions/download-artifact@v3
+            uses: actions/download-artifact@v4
             with:
               name: 'build-artifacts' #ダウンロード対象のArtifacts
               path: ./build/*
