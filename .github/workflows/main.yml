@@ -6,11 +6,9 @@ on: # トリガー条件
             - main
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        
     job1:
         name: set-up-and-build-job
+        runs-on: ubuntu-latest
         steps: 
             - name: Checkout code
               uses: actions/checkout@v2
@@ -25,7 +23,7 @@ jobs:
         
             - name: Build project
               run: npm run build
-
+    
             - name: Create GitHub Release and upload artifacts
               uses: softprops/action-gh-release@v1
               with:
