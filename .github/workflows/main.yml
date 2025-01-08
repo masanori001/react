@@ -43,12 +43,8 @@ jobs:
           - name: Download build artifact
             uses: actions/download-artifact@v3
             with:
-              name: upload build artifacts #ダウンロード対象のArtifacts
-    
-          - name: Copy build artifact to the target repo
-            run: |
-              # ここで成果物を対象リポジトリにコピーします
-              cp -r ./build/* .
+              name: 'upload build artifacts' #ダウンロード対象のArtifacts
+              path: ./build/*
     
           - name: Commit and push changes to another repository
             run: |
