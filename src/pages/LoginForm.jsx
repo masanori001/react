@@ -24,11 +24,10 @@ export const LoginPage =()=> {
 
     // =========バリデーションチェック関数=========
     const judgeUsernameValid = (Username) => {
-        // 文字列の中に数字が4回以上
-        const regexp = /.*\d+.*\d+.*\d+.*\d+/;
+        // 文字列の中に英語＆数字が1回以上かつ8文字以上16文字以下
+        const regexp = /^(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,16}$/i;
 
-        // 文字数が8以上で数字が3つ以上含まれている
-        if (8 <= Username.length && Username.match(regexp)) {
+        if (Username.match(regexp)) {
             setUsername('入力されたユーザー名はポリシーを満たしています。');
         }
         else {
@@ -42,11 +41,10 @@ export const LoginPage =()=> {
     
     // ========バリデーションチェック関数========
     const judgePasswordValid = (Password) => {
-        // 文字列の中に数字が4回以上
-        const regexp = /.*\d+.*\d+.*\d+.*\d+/;
+        // 文字列の中に英語＆数字が1回以上かつ8文字以上16文字以下
+        const regexp = /^(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}$/i;
 
-        // 文字数が8以上で数字が3つ以上含まれている
-        if (8 <= Password.length && Password.match(regexp)) {
+        if (Password.match(regexp)) {
             setPassword('入力されたパスワードはポリシーを満たしています。');
         }
         else {
