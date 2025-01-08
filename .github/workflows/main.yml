@@ -34,7 +34,7 @@ jobs:
         needs: job1 #job1が成功したら実行
         steps:
           - name: Checkout the target repository
-            uses: actions/checkout@v2
+            uses: actions/checkout@v4
             with:
               repository: 'masanori001/react_build'  # push先のリポジトリ
               ref: 'main'
