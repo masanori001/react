@@ -48,7 +48,7 @@ jobs:
     
           - name: Commit and push changes to another repository
             run: |
-              # git config user.name "GitHub Actions"
+              git config user.name "masanori001"
               # git config user.email "actions@github.com"
               git add .
               git commit -m "Add build artifacts"
