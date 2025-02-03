@@ -15,6 +15,7 @@ export const PageHeader = () => {
           <ul>
             <li><Link to="/">トップページ</Link></li>
             <li><Link to="/punchtimeclock">タイムレコーダー</Link></li>
+            <li><Link to="/haikourituchecker">牌効率チェッカー</Link></li>
           </ul>
         </nav>
       </header>
