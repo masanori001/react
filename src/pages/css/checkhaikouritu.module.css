@@ -1,4 +1,25 @@
-.root{
+.root {
+    border: 3px solid salmon;
+    width: auto; /* 横幅はウィンドウのサイズに自動調整 */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    max-width: 90%;
+    text-align: center; /* 親要素の中で中央揃え */
+    background-color: beige;
+}
+.root div {
+    display: flex;
+    justify-content: space-around;
+}
+.root img{
+    display: inline-block;
+    cursor: pointer;
+    width: 7%;
+    height: auto;
+}
+
+.selectedtails {
     border: 3px solid blue;
     width: auto; /* 横幅はウィンドウのサイズに自動調整 */
     margin-left: auto;
@@ -8,28 +29,13 @@
     text-align: center; /* 親要素の中で中央揃え */
     justify-content: space-around;
     background-color: beige;
-    display: flex;
     flex-direction: column;
 }
-
-.manzu {
+.selectedtails div {
     display: flex;
-    justify-content: space-around;
 }
-.manzu img {
-    display: inline-block;
+.selectedtails img {
     cursor: pointer;
-    width: 10%;
-    height: auto;
-}
-
-.pinzu {
-    display: flex;
-    justify-content: space-around;
-}
-.pinzu img {
-    cursor: pointer;
-    display: inline-block;
-    width: 10%;
+    width: 7%;
     height: auto;
 }

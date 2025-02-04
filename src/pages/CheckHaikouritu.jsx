@@ -8,26 +8,32 @@ export const CheckHaikouritu = () => {
     const rows = 3;
     const cols = 9;
     const [selecttails,setselecttail] = useState(Array.from({ length: rows }, () => Array(cols).fill(0)));
+    const [tailsarray,settailsarray] = useState([]);
 
     // クリックされた画像のdata-valueを取得し、合計に加算する関数
     const tailClick = (event) => {
         const value = event.target.getAttribute('data-id');  // data-valueの値を取得
-        setselecttail((selecttails) => { return selecttailsUpdate(selecttails,value); }); 
+        const src = event.target.src;
+        setselecttail((selecttails) => { return selecttailsUpdate(selecttails,value,src); }); 
     };
 
-    const selecttailsUpdate = (prevSelecttails, value) => {
+    const selecttailsUpdate = (prevSelecttails, value,src) => {
         const updatedTails = [...prevSelecttails]; // 配列をコピー
         const valuearray = JSON.parse(value);
         if (updatedTails[valuearray[0]][valuearray[1]] === 4){
             return prevSelecttails; // 牌が4つ以上の時は変更なし
         } else {
             updatedTails[valuearray[0]][valuearray[1]] += 1;
+            settailsarray((prevtailsarray)=> { 
+                if (prevtailsarray.length != 14) {
+                    return [...prevtailsarray,src]
+                } else { return prevtailsarray }});
         }
         console.log(updatedTails)
         return updatedTails;  // 新しい状態を返す
       };
 
-    // imgタグにクリックしたときに呼び出す関数を追加する
+    // imgタグをクリックしたときに呼び出す関数を追加する
     useEffect(() => {
         // すべての画像タグ取得
         const images = document.querySelectorAll('img');
@@ -49,7 +55,7 @@ export const CheckHaikouritu = () => {
                 <PageHeader />
                 <h2>牌効率チェッカー</h2>
                 <div className={checkhaikouritu.root} >
-                    <div className={checkhaikouritu.manzu}>
+                    <div className={checkhaikouritu.tailimg}>
                         <img src="images/manzu/1m.png" data-id="[0,0]" />
                         <img src="images/manzu/2m.png" data-id="[0,1]" />
                         <img src="images/manzu/3m.png" data-id="[0,2]" />
@@ -60,7 +66,7 @@ export const CheckHaikouritu = () => {
                         <img src="images/manzu/8m.png" data-id="[0,7]" />
                         <img src="images/manzu/9m.png" data-id="[0,8]" />
                     </div>
-                    <div className={checkhaikouritu.pinzu}>
+                    <div className={checkhaikouritu.tailimg}>
                         <img src="images/manzu/1p.png" data-id="[1,0]" />
                         <img src="images/manzu/2p.png" data-id="[1,1]" />
                         <img src="images/manzu/3p.png" data-id="[1,2]" />
@@ -70,6 +76,17 @@ export const CheckHaikouritu = () => {
                         <img src="images/manzu/7p.png" data-id="[1,6]" />
                         <img src="images/manzu/8p.png" data-id="[1,7]" />
                         <img src="images/manzu/9p.png" data-id="[1,8]" />
+                    </div>
+                </div>
+                <div className={checkhaikouritu.selectedtails}>
+                    <div>
+                    {tailsarray.map((imageSrc, index) => (
+                        <img
+                            key={index}
+                            src={imageSrc}
+                            alt={`画像${index + 1}`}
+                        />
+                        ))}
                     </div>
                 </div>
                 
